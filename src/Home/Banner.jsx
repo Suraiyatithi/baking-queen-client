@@ -1,7 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
-import img1 from '../assets/istockphoto2-1463115424-1024x1024.jpg'
-import img2 from '../assets/istockphoto-1414285963-1024x1024.jpg';
-import img3 from '../assets/istockphoto2-1388791611-1024x1024.jpg'
+import img1 from '../assets/pexels-chan-walrus-958545.jpg'
+import img2 from '../assets/pancakes-2020863_1280.jpg';
+import img3 from '../assets/vegetables-752153_1920.jpg'
 
 function Banner() {
   return (

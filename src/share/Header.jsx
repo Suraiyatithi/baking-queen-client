@@ -13,19 +13,19 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className=''>
                             <img style={{width:"30px "}} src={logo1} alt="" />
-                            <h3>Baking Queen</h3>
+                            <h3 style={{color:"rosybrown"}}>Baking Queen</h3>
                         </Nav>
                         <Nav className="mx-auto me-5 pe-5">
                             <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/category/0">Home</Link>
-                            <Nav.Link href="#pricing">Blog</Nav.Link>
+                            <Nav> <Link className='text-decoration-none text-secondary mt-2' to='/blog'>Blog</Link> </Nav>
                               {/* {
                                 user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
                             } */}
 
                           
-                              <Button className='ms-4 me-4' variant="secondary">Logout</Button> 
+                              <Button className='ms-4 me-4'  style={{background:"	darkmagenta"}}>Logout</Button> 
                                 <Link to="/login">
-                                    <Button variant="secondary">Login</Button>
+                                    <Button style={{background:"	darkmagenta"}}>Login</Button>
                                 </Link>
                            
                         </Nav>
