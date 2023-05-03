@@ -1,12 +1,12 @@
 import React from 'react';
 import Header from '../share/Header';
 import { Outlet } from 'react-router-dom';
-import bg from '../assets/meat-1155132_1280.jpg'
 import Footer from '../share/Footer';
+import bg3 from '../assets/pexels-chan-walrus-958545.jpg'
 
-const LoginLayOUt = () => {
+const ChefLayout = () => {
     return (
-        <div style={{backgroundImage:`url(${bg})`}} className='img img-fluid' >
+        <div style={{backgroundImage:`url(${bg3})`}} className=''>
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
@@ -14,4 +14,4 @@ const LoginLayOUt = () => {
     );
 };
 
-export default LoginLayOUt;
+export default ChefLayout;

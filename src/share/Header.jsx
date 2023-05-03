@@ -23,9 +23,9 @@ const Header = () => {
                             } */}
 
                           
-                              <Button className='ms-4 me-4'  style={{background:"	darkmagenta"}}>Logout</Button> 
+                              <Button className='ms-4 me-4 btn 'style={{background:"	darkmagenta"}}>Logout</Button> 
                                 <Link to="/login">
-                                    <Button style={{background:"	darkmagenta"}}>Login</Button>
+                                    <Button className='btn' style={{background:"	darkmagenta"}}>Login</Button>
                                 </Link>
                            
                         </Nav>
