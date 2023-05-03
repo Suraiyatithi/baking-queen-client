@@ -5,8 +5,8 @@ import img3 from '../assets/vegetables-752153_1920.jpg'
 
 function Banner() {
   return (
-    <div className='container m-5  align-items-center text-right h-25'>
-    <Carousel className='container m-5 '>
+    <div className='container align-items-center text-right h-25'>
+    <Carousel className='container mt-4 '>
       <Carousel.Item>
         <img
           className="d-block w-100"

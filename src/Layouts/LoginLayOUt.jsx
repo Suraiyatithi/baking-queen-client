@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../share/Header';
 import { Outlet } from 'react-router-dom';
-import bg from '../assets/meat-1155132_1280.jpg'
+import bg from '../assets/roasted2.jpg'
 import Footer from '../share/Footer';
 
 const LoginLayOUt = () => {

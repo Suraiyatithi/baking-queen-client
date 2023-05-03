@@ -1,5 +1,5 @@
 import React from 'react';
-import bgfooter from '../assets/italian-cuisine-2378729_1920.jpg'
+import bgfooter from '../assets/ittalian.jpg'
 
 const Footer = () => {
     return (

@@ -11,22 +11,22 @@ const Features = () => {
             <h3 style={{background:"rosybrown"}} className='text-center p-2'>The Bengalian Food</h3>
 
            <div className="row  ">
-           <div className="col-sm-12 col-lg-6 mt-5 pt-5">
+           <div className="col-sm-12 col-lg-6  pt-5">
               <div className="row row-cols-2">
-              <div className="mt-5 text-center mb-5">
-                    <img className='w-75 rounded-circle' src={kichuri} alt="" />
+              <div className="mt-5 text-center mb-2">
+                    <img className='w-100 rounded-circle' src={kichuri} alt="" />
                    <p className='pt-2'> <small>Frits salate</small></p>
                 </div>
-                <div className="mt-5 text-center mb-5">
-                    <img className='w-75 rounded-circle' src={kacchi} alt="" />
+                <div className="mt-5 text-center mb-2">
+                    <img className='w-100 rounded-circle' src={kacchi} alt="" />
                    <p className='pt-2'> <small>kacchi</small></p>
                 </div>
                 <div className="text-center">
-                    <img className='w-75 rounded-circle' src={beef} alt="" />
+                    <img className='w-100 rounded-circle' src={beef} alt="" />
                    <p className='pt-2'> <small>Beef Biriyani</small></p>
                 </div>
                 <div className="text-center">
-                <img className='w-75 rounded-circle' src={chicken} alt="" />
+                <img className='w-100 rounded-circle' src={chicken} alt="" />
                    <p className='pt-2'> <small>Chicken Biriani</small></p>
                 </div>
               </div>

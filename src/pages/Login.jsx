@@ -30,9 +30,20 @@ const Login = () => {
             })
     }
 
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error)
+        })
+    }
+
     return (
      
-       <Container className='w-25 mx-auto'>
+       <Container className='w-50 text-white'>
       <h3 className='mt-5'>Please Login</h3>
       <Form onSubmit={handleLogin}>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -45,15 +56,17 @@ const Login = () => {
               <Form.Control type="password" name='password' placeholder="Password" required />
           </Form.Group>
 
-          <Button variant="primary" type="submit">
+          <Button style={{background:"	darkmagenta"}} type="submit">
               Login
           </Button>
           <br />
           <Form.Text className="text-white mb-5">
-              Don't Have an Account? <Link className='text-white bg-warning' to="/register">Register</Link>
+              Don't Have an Account? <Link className='text-white' to="/register">Register</Link>
           </Form.Text>
-          <Form.Text className="text-success">
-
+          <Form.Text>
+          <div>
+                    <button onClick={handleGoogleSignIn} className="btn btn-warning ps-5 pe-5 text-white">Sign in with google</button>
+                    </div>
           </Form.Text>
           <Form.Text className="text-danger mb-5">
 
