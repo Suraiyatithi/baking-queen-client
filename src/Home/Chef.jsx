@@ -2,14 +2,15 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import { Link } from 'react-router-dom';
+import {BiLike} from 'react-icons/bi'
 
 const Chef = ({chef}) => {
     const {chef_name,chef_photo,experience,chef_description,likes,recipes,id}=chef;
     return (
         <div>
                <CardGroup>
-      <Card>
-        <Card.Img variant="top" src={chef_photo} />
+      <Card style={{height:"35rem"}}>
+        <Card.Img className='img img-fluid' style={{maxHeight:"18rem"}} variant="top" src={chef_photo} />
         <Card.Body>
           <Card.Title>{chef_name}</Card.Title>
           <Card.Text>
@@ -23,7 +24,7 @@ const Chef = ({chef}) => {
         
             </div>
             <div className="ps-5 ms-4">
-            <p>{likes}</p> 
+            <p><BiLike></BiLike> {likes}</p> 
             </div>
            </div>
           </Card.Text>

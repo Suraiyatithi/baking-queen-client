@@ -16,7 +16,7 @@ const Header = () => {
                             <h3 style={{color:"rosybrown"}}>Baking Queen</h3>
                         </Nav>
                         <Nav className="mx-auto me-5 pe-5">
-                            <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/category/0">Home</Link>
+                            <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/">Home</Link>
                             <Nav> <Link className='text-decoration-none text-secondary mt-2' to='/blog'>Blog</Link> </Nav>
                               {/* {
                                 user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>

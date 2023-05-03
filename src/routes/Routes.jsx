@@ -9,6 +9,7 @@ import Blog from "../pages/Blog";
 import Hdchef from "../Home/Hdchef";
 import Recipes from "../pages/Recipes";
 import ChefLayout from "../Layouts/ChefLayout";
+import Error from "../pages/Error";
 
 
   const router = createBrowserRouter([
@@ -52,6 +53,10 @@ import ChefLayout from "../Layouts/ChefLayout";
     {
       path:'/blog',
       element:<Blog></Blog>
+    },
+    {
+      path:'/',
+      element:<Error></Error>
     }
   ]);
   export default router;
