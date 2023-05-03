@@ -16,6 +16,7 @@ import Error from "../pages/Error";
     {
       path: "/",
       element:<Main></Main>,
+      errorElement:<Error></Error>,
       children:[
         {
               path:'/',
@@ -53,10 +54,6 @@ import Error from "../pages/Error";
     {
       path:'/blog',
       element:<Blog></Blog>
-    },
-    {
-      path:'/',
-      element:<Error></Error>
     }
   ]);
   export default router;
