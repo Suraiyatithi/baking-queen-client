@@ -10,6 +10,7 @@ import Hdchef from "../Home/Hdchef";
 import Recipes from "../pages/Recipes";
 import ChefLayout from "../Layouts/ChefLayout";
 import Error from "../pages/Error";
+import PrivateRoute from "./PrivateRoute";
 
 
   const router = createBrowserRouter([
@@ -31,7 +32,7 @@ import Error from "../pages/Error";
             children: [
                 {
                     path: ':id',
-                    element: <Recipes></Recipes>,
+                    element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
                     loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
                 }]},
       
