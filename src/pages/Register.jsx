@@ -6,6 +6,7 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
     const [error, setError] = useState('');
@@ -34,6 +35,7 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                updateUserData(result.user, name,url);
             })
             .catch(error => {
                 console.log(error);
@@ -43,6 +45,18 @@ const Register = () => {
 
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
+    }
+    const updateUserData = (user, name,url) => {
+        updateProfile(user, {
+            displayName: name,
+             photoURL: "url"
+        })
+            .then(() => {
+                console.log('user name updated')
+            })
+            .catch(error => {
+                setError(error.message);
+            })
     }
   const  handleShow=()=>{
     if(error===true){

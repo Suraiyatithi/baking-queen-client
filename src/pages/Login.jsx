@@ -3,10 +3,11 @@ import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import bg from '../assets/istockphoto-1371318211-1024x1024.jpg'
+import {  FaGithub, FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const { signIn } = useContext(AuthContext);
+    const { signIn,signInWithGoogle,githubLogIn } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
@@ -28,6 +29,7 @@ const Login = () => {
             .catch(error => {
                 console.log(error);
             })
+
     }
 
     const handleGoogleSignIn = () => {
@@ -40,6 +42,18 @@ const Login = () => {
             console.log(error)
         })
     }
+    const handleGithubSignIn = () => {
+        githubLogIn()
+        .then(result => {
+            const loggedUser = result.user;
+            console.log(loggedUser);
+        })
+        .catch(error => {
+            console.log(error);
+        
+        })
+    }
+    
 
     return (
      
@@ -65,11 +79,13 @@ const Login = () => {
           </Form.Text>
           <Form.Text>
           <div>
-                    <button onClick={handleGoogleSignIn} className="btn btn-warning ps-5 pe-5 text-white">Sign in with google</button>
+                    <button onClick={handleGoogleSignIn} className="btn btn-warning mt-4 ps-5 pe-5 text-white"><FaGoogle></FaGoogle> Sign in with google</button>
                     </div>
           </Form.Text>
-          <Form.Text className="text-danger mb-5">
-
+          <Form.Text>
+          <div>
+                    <button onClick={handleGithubSignIn} className="btn btn-secondary mt-3 mb-5 ps-5 pe-5 text-white"> <FaGithub></FaGithub> Sign in with Github</button>
+                    </div>
           </Form.Text>
       </Form>
   </Container>
