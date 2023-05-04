@@ -9,22 +9,19 @@ const Chef = ({chef}) => {
     return (
         <div>
                <CardGroup>
-      <Card style={{height:"30rem"}}>
+      <Card className='mb-4' style={{height:"32rem"}}>
         <Card.Img className='img img-fluid' style={{maxHeight:"18rem"}} variant="top" src={chef_photo} />
         <Card.Body>
           <Card.Title>{chef_name}</Card.Title>
-          <Card.Text>
+        
           <p className='ps-2'><small>{experience} Years of Experience</small></p>
-           <div className="d-flex">
-            <div className="ps-2 pe-5">
+            <div className=" ps-2 pe-5">
             <p>Number of recipes:{recipes.length}</p>
         
-            </div>
-            <div className="ps-5 ms-4">
+        
             <p><BiLike></BiLike> {likes}</p> 
             </div>
-           </div>
-          </Card.Text>
+        
         </Card.Body>
         <Card.Footer className='text-center'>
        <Link className='text-decoration-none text-white' to={`/recipes/${id}`}> <button className='btn ps-5 pe-5 text-white'style={{background:"	darkmagenta"}}>View recipies</button></Link>

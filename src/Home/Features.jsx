@@ -4,6 +4,7 @@ import beef from '../assets/istockphoto-1457374980-1024x1024.jpg';
 import chicken from '../assets/istockphoto-1254720533-1024x1024.jpg';
 import kacchi from '../assets/istockphoto-1152493500-1024x1024.jpg';
 import kichuri from '../assets/pexels-ella-olsson-1640774.jpg';
+import Marquee from "react-fast-marquee";
 
 const Features = () => {
     return (
@@ -41,10 +42,21 @@ const Features = () => {
                 <img className='w-75 ms-5' src={chef} alt="" />
             </div>
             <div className="col-sm-6 col-lg-2 mt-5 pt-5 align-items-center ">
-            <h2 style={{color:"		darkmagenta"}} className='mt-5 pt-5  lh-lg'>
-            Cook <br />
-                AnyThings With <br /> the Expert
-            </h2>
+          <h4>Cook 
+            <br />AnyThings 
+            <br />With Experts
+          </h4>
+          <p style={{color:"mistyrose"}}>
+            out chef list:
+          </p>
+          <ul className='text-warning'>
+            <li>Johnia Sithi</li>
+            <li>Jinia Doly</li>
+            <li>Maria Rodriguze</li>
+            <li>Suraiya Tithi</li>
+            <li>Aysha Rahman</li>
+            <li>Kibita Begum</li>
+          </ul>
             </div>
            </div>
         </div>

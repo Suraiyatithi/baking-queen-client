@@ -28,8 +28,8 @@ const Header = () => {
                     <Navbar.Collapse id="responsive-navbar-nav">
                      
                         <Nav className="mx-auto me-5 pe-5">
-                            <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/">Home</Link>
-                            <Nav> <Link className='text-decoration-none text-secondary mt-2' to='/blog'>Blog</Link> </Nav>
+                         <Nav.Link className={({isActive})=>(isActive?'success':'')}>   <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/">Home</Link></Nav.Link>
+                            <Nav.Link className={({isActive})=>(isActive?'nav-link-active':'')}>  <Link className=' text-decoration-none text-secondary mt-2' to='/blog'> Blog</Link> </Nav.Link>
                               {
                                 user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
                             }

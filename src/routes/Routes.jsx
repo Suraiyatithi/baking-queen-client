@@ -22,7 +22,7 @@ import PrivateRoute from "./PrivateRoute";
         {
               path:'/',
               element:<Hdchef></Hdchef>,
-              loader:()=>fetch(`http://localhost:5000/chef`)
+              loader:()=>fetch(`https://baking-queen-server-suraiyatithi.vercel.app/chef`)
         },
      
           ]},
@@ -33,7 +33,7 @@ import PrivateRoute from "./PrivateRoute";
                 {
                     path: ':id',
                     element: <PrivateRoute><Recipes></Recipes></PrivateRoute>,
-                    loader: ({params}) => fetch(`http://localhost:5000/chef/${params.id}`)
+                    loader: ({params}) => fetch(`https://baking-queen-server-suraiyatithi.vercel.app/chef/${params.id}`)
                 }]},
       
 

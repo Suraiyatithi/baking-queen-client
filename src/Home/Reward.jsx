@@ -67,12 +67,20 @@ const Reward = () => {
            </div>
           </div>
           <div className="col">
-            <Marquee speed={95}>
+          <Marquee>
+                <p className='bg-warning text-White mt-3'>Our Chef killed it and .And they deserve it actually hard works pays of so,all
+                 of us should give them some resprcts</p>
+            </Marquee>
+            <Marquee speed={120}>
          
-         <img className='w-50' src={img7} alt="" />
-         <img src={img8} alt="" />
-         <img className='w-50' src={img9} alt="" />
+         <img className='w-50 mt-5 pt-2  ' src={img7} alt="" />
+         <img className='mt-5' src={img8} alt="" />
+         <img className='w-50 mt-5' src={img9} alt="" />
          
+            </Marquee>
+            <Marquee>
+                <p className='bg-warning text-White'>Our Chef killed it and .And they deserve it actually hard works pays of so,all
+                 of us should give them some resprcts</p>
             </Marquee>
           </div>
          </div>

@@ -6,15 +6,22 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
+import app from '../firebase/firebase.config';
+
+const auth = getAuth(app);
 
 const Register = () => {
     const [error, setError] = useState('');
-    const { createUser } = useContext(AuthContext);
+    const[success,setsuccess]=useState()
+    const { createUser ,user} = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
 
     const handleRegister = event => {
         event.preventDefault();
+        setError('')
+        setsuccess('')
         const form = event.target;
         const name = form.name.value;
         const photo = form.photo.value;
@@ -22,7 +29,7 @@ const Register = () => {
         const password = form.password.value;
 
         console.log(name, photo, email, password);
-        setError('');
+
 
 
 if (password.length < 6) {
@@ -32,11 +39,15 @@ if (password.length < 6) {
       
      
 
-        createUser(email, password)
+        // createUser(email, password)
+        createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
-                updateUserData(result.user, name,url);
+                event.target.reset();
+                seterror('')
+                setsuccess("Successfully Register")
+                 updateUserData(result.user, name);
             })
             .catch(error => {
                 console.log(error);
@@ -47,27 +58,26 @@ if (password.length < 6) {
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
     }
-    const updateUserData = (user, name,url) => {
-        updateProfile(user, {
-            displayName: name,
-             photoURL: "url"
-        })
-            .then(() => {
-                console.log('user name updated')
-            })
-            .catch(error => {
-                setError(error.message);
-            })
+    const updateUserData = ( name)=> {
+       updateProfile(user,{
+        displayName:name,
+
+
+       }).then(()=>{
+        console.log('username update')
+       }).catch(error=>{
+        console.log(error.massege)
+       })
     }
     const handlechange=event=>{
-        // setError(event.target.value);
+    
         if(event.target.value.trim().length ==0)
         {
            setError('!!!!!!!Please Fill All the Input Value')
            return
         }}
   const  handleShow=()=>{
-    if(!error){
+    if(success){
        
     toast('Successfully Register to this site')}
   }
@@ -101,7 +111,7 @@ if (password.length < 6) {
                         name="accept"
                         label={<>Accept <Link to="/terms">Terms and Conditions</Link> </>} />
                 </Form.Group>
-              <Button onClick={handleShow} style={{background:"	darkmagenta"}} disabled={!accepted} type="submit">
+              <Button onSubmit={handleShow} style={{background:"	darkmagenta"}} disabled={!accepted} type="submit">
                 Register
         
                 </Button>
@@ -113,6 +123,10 @@ if (password.length < 6) {
                
                 <Form.Text className="">
               <h6 className='text-error text-danger p-2'>{error}</h6>
+                </Form.Text>
+                    
+                <Form.Text className="">
+              <h6 className=' text-success p-2'>{success}</h6>
                 </Form.Text>
             </Form>
         </Container>

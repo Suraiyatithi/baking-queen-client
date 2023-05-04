@@ -39,13 +39,13 @@ const Blog = () => {
         <Card.Title className='mb-4'>Tell us the difference between unControlled and Controlled Components</Card.Title>
        
         <Card.Text>
-         <div className="d-flex justify-content-between">
-          <div className="">
+         <div className="row row-cols-sm-1 row-cols-lg-2 justify-content-between">
+          <div className="col">
           <Card.Subtitle className="mb-2 text-muted">Controlled Components</Card.Subtitle>
       
             <p>Basically controlled components refers to components that have their state and behaviour controlled by the parent components.The parents components has held over the from data.it does not maintain its internal state. </p>
           </div>
-          <div className="">
+          <div className="col">
           <Card.Subtitle className="mb-2 text-muted">Uncontrolled Components</Card.Subtitle>
            
             <p>On the Otherhand the uncontrolled components refers to components that usually manage it's own state internally.The DOM itself control over the data.</p>
@@ -72,15 +72,15 @@ const Blog = () => {
         <Card.Title className='mb-4'>Tell us the difference between nodejs and expressjs</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
         <Card.Text>
-<div className="d-flex justify-content-between">
-  <div className="">
+<div className="row row-cols-sm-1 row-cols-lg-2 justify-content-between">
+  <div className="col">
   <Card.Subtitle className="mb-2 text-muted">Node.js</Card.Subtitle>
   <p>Node js is an Open source and Cross plateform runtime environment for executing javascript code
      outside of the browser.First of all you just need to remember that node.js is not a framework 
      and it's a programming language.We basically 
     use Node.js for the purpose of backend work as like building apis like web app or mobile app</p>
   </div>
-  <div className="">
+  <div className="col">
   <Card.Subtitle className="mb-2 text-muted">Express.js</Card.Subtitle>
   <p>One the Otherside Express.js is a kind of framework that sits on top of Node.js's web server 
     functionally to simplify it's APIs and add helpful new features.It's makes it easier to organize
