@@ -10,7 +10,7 @@ const Recipes = () => {
     return (
         <div>
             <h3 className=' text-center mt-5 pt-5 text-warning'>More about The Chef</h3>
-            <Container className='bg-white rounded'>
+            <Container className='bg-white rounded shadow-lg'>
               <div className="row row-cols-lg-2 row-cols-sm-1 p-5 m-5">
               <div className="col align-items-center">
                 <h4>Hey,This is {chef_name}</h4>
@@ -28,7 +28,7 @@ const Recipes = () => {
             </Container>
             <div className="">
             <h3 className='text-warning text-center mt-5 mb-5'>Here are Some of my Recipes</h3>
-                <div className="row row-cols-lg-3 row-cols-sm-1 row-cols-md-2 m-4 mb-5">
+                <div className="row row-cols-lg-3 row-cols-sm-1 shadow-lg row-cols-md-2 m-4 mb-5">
             {
                 recipes.map(recipe=><Recipe key={recipe.id} recipe={recipe}></Recipe>)
             }

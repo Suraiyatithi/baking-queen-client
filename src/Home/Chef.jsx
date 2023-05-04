@@ -9,7 +9,7 @@ const Chef = ({chef}) => {
     return (
         <div>
                <CardGroup>
-      <Card className='mb-4' style={{height:"32rem"}}>
+      <Card className='mb-4 shadow-lg' style={{height:"32rem"}}>
         <Card.Img className='img img-fluid' style={{maxHeight:"18rem"}} variant="top" src={chef_photo} />
         <Card.Body>
           <Card.Title>{chef_name}</Card.Title>

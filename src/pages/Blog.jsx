@@ -30,7 +30,7 @@ const Blog = () => {
         </div>
   
         <div id="divToPrint" ref={inputRef} className=' text-center'>
-           <h3 className='text-center text-white p-5'>Here is Our Daily Blog Page</h3> 
+           <h3 className='text-center text-warning p-5'>Here is Our Daily Blog Page</h3> 
            <div className="m-4">
 
     <div className='row  row-cols-1 text-center'>
@@ -70,7 +70,7 @@ const Blog = () => {
     <Card className='w-75 p-5 col mx-auto mt-4'>
       <Card.Body>
         <Card.Title className='mb-4'>Tell us the difference between nodejs and expressjs</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+       
         <Card.Text>
 <div className="row row-cols-sm-1 row-cols-lg-2 justify-content-between">
   <div className="col">

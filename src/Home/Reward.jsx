@@ -21,7 +21,7 @@ const Reward = () => {
          <div className="row row-cols-sm-1 row-cols-lg-2 p-4 ms-4 me-4">
          <div className='col'>
            <div className="row row-cols-1 mt-3">
-           <div className='col border border-warning d-flex'>
+           <div className='col border border-warning rounded shadow-lg d-flex'>
             <div className="">
                 <img className='w-75' src={award1} alt="" />
             </div>
@@ -35,7 +35,7 @@ const Reward = () => {
 
             </div>
            </div>
-           <div className='col border border-warning d-flex mt-3'>
+           <div className='col border border-warning rounded shadow-lg d-flex mt-3'>
             <div className="">
                 <img className='w-75' src={award2} alt="" />
             </div>
@@ -49,7 +49,7 @@ const Reward = () => {
 
             </div>
            </div>
-           <div className='col border border-warning mt-3 d-flex'>
+           <div className='col border rounded shadow-lg border-warning mt-3 d-flex'>
             <div className="">
                 <img className='w-75 p-4' src={award3} alt="" />
             </div>
