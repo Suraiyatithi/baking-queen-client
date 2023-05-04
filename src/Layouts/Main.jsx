@@ -4,6 +4,7 @@ import Footer from '../share/Footer';
 import Banner from '../Home/Banner';
 import Features from '../Home/Features';
 import { Outlet } from 'react-router-dom';
+import Reward from '../Home/Reward';
 
 const Main = () => {
     return (
@@ -12,6 +13,7 @@ const Main = () => {
            <Banner></Banner>
            <Features></Features>
            <Outlet></Outlet>
+           <Reward></Reward>
            <Footer></Footer>
         </div>
     );

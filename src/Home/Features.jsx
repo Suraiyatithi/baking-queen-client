@@ -8,7 +8,12 @@ import kichuri from '../assets/pexels-ella-olsson-1640774.jpg';
 const Features = () => {
     return (
         <div className='m-5 p-5'>
-            <h3 style={{background:"rosybrown"}} className='text-center p-2'>The Bengalian Food</h3>
+            <h3 style={{color:"#900C3F "}} className='text-center'>The Bengalian Food</h3>
+          <div className="text-center">
+          <small className=''>
+                Our Chef will provide you the Best food you have ever eat.We can <br /> surely said that you will definatly love  our services and food quality.World bestest Chef is here to cook for you and the dises you love most
+            </small>
+          </div>
 
            <div className="row  ">
            <div className="col-sm-12 col-lg-6  pt-5">

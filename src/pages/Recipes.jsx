@@ -9,7 +9,7 @@ const Recipes = () => {
     const {chef_name,chef_photo,experience,chef_description,likes,recipes,id}=recipeInfo;
     return (
         <div>
-            <h3 className='text-white text-center mt-5 pt-5'>More about The Chef</h3>
+            <h3 className=' text-center mt-5 pt-5 text-warning'>More about The Chef</h3>
             <Container className='bg-white rounded'>
               <div className="row row-cols-lg-2 row-cols-sm-1 p-5 m-5">
               <div className="col align-items-center">
@@ -27,8 +27,8 @@ const Recipes = () => {
               </div>
             </Container>
             <div className="">
-            <h3 className='text-white text-center mt-5 mb-5'>Here are Som eof my Recipes</h3>
-                <div className="row row-cols-lg-3 row-cols-sm-1 row-cols-md-2">
+            <h3 className='text-warning text-center mt-5 mb-5'>Here are Some of my Recipes</h3>
+                <div className="row row-cols-lg-3 row-cols-sm-1 row-cols-md-2 m-4">
             {
                 recipes.map(recipe=><Recipe key={recipe.id} recipe={recipe}></Recipe>)
             }

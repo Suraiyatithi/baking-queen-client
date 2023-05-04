@@ -3,15 +3,33 @@ import { CardGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
 import Footer from '../share/Footer';
 import Header from '../share/Header'
-
+import { useRef } from "react";
+import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
+import { FaFileDownload } from 'react-icons/fa';
+import bg6 from "../assets/istockphoto-1414285963-1024x1024.jpg"
 
 
 const Blog = () => {
+  const inputRef = useRef(null);
+  const printDocument = () => {
+    html2canvas(inputRef.current).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      pdf.addImage(imgData, "JPEG", 0, 0);
+      pdf.save("download.pdf");
+    });
+  };
     return (
-      <div>
+      <div style={{backgroundImage:`url(${bg6})`}}>
         <Header></Header>
+        <div className=" bg-secondary text-white">
+        <div className="p-3 mx-auto">
+          <button className='btn btn-danger text-white' onClick={printDocument}><FaFileDownload></FaFileDownload> Download</button>
+        </div>
+        </div>
   
-        <div className='bg-dark text-center'>
+        <div id="divToPrint" ref={inputRef} className=' text-center'>
            <h3 className='text-center text-white p-5'>Here is Our Daily Blog Page</h3> 
            <div className="m-4">
 
@@ -46,8 +64,7 @@ const Blog = () => {
                child components. And child components receive them. We can pass any data as props. Therefore, 
               we need a way to validate their data type so that the child component gets what they expect.</p>
         </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+       
       </Card.Body>
     </Card>
     <Card className='w-75 p-5 col mx-auto mt-4'>

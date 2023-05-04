@@ -9,13 +9,10 @@ const Chef = ({chef}) => {
     return (
         <div>
                <CardGroup>
-      <Card style={{height:"35rem"}}>
+      <Card style={{height:"30rem"}}>
         <Card.Img className='img img-fluid' style={{maxHeight:"18rem"}} variant="top" src={chef_photo} />
         <Card.Body>
           <Card.Title>{chef_name}</Card.Title>
-          <Card.Text>
-          {chef_description}
-          </Card.Text>
           <Card.Text>
           <p className='ps-2'><small>{experience} Years of Experience</small></p>
            <div className="d-flex">

@@ -4,7 +4,7 @@ import bgfooter from '../assets/ittalian.jpg'
 const Footer = () => {
     return (
         <div style={{backgroundImage:`url(${bgfooter})`}}  className='bg-dark text-dark'>
-            <h3 className='text-center p-4 m-4'>Contact Us for More details</h3>
+            <h3 style={{color:"#900C3F "}} className='text-center p-4 m-4'>Contact Us for More details</h3>
             <div className='row row-cols-1 row-cols-lg-2 p-4 m-4'>
                 <div className="col">
                     <h6>Contact Us</h6>
