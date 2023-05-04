@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import logo1 from '../assets/ff0g_lr87_140724.jpg'
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
-
+import {  NavLink } from 'react-router-dom';
 const Header = () => {
     
     const { user, logOut } = useContext(AuthContext);
@@ -27,17 +27,23 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                      
-                        <Nav className="mx-auto me-5 pe-5">
-                         <Nav.Link className={({isActive})=>(isActive?'success':'')}>   <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/">Home</Link></Nav.Link>
-                            <Nav.Link className={({isActive})=>(isActive?'nav-link-active':'')}>  <Link className=' text-decoration-none text-secondary mt-2' to='/blog'> Blog</Link> </Nav.Link>
+                        <Nav className="mx-auto me-5">
+                         {/* <Nav.Link className={({isActive})=>(isActive?'success':'')}>   <Link className='text-decoration-none mt-2 text-secondary pe-4' to="/">Home</Link></Nav.Link> */}
+                         <NavLink className={({ isActive }) => (isActive ? 'text-info' : ' ')} to="/">Home</NavLink>
+                            {/* <NavLink className={({isActive})=>(isActive?'text-info':'')}> <Link className=' text-decoration-none text-secondary mt-2' to='/blog'> Blog</Link> </NavLink> */}
+       </Nav>
+       <Nav className='text-decoration-none '>
+       <NavLink  className= {({ isActive }) => (isActive ? 'text-info' : ' ')} to="/blog">Blog</NavLink>
+       </Nav>
+                   <Nav>
                               {
                                 user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
                             }
 
                           {user ?
-                                <Button onClick={handleLogOut} style={{background:"	darkmagenta"}}>Logout</Button> :
+                                <Button  className='ms-3' onClick={handleLogOut} style={{background:"	darkmagenta"}}>Logout</Button> :
                                 <Link to="/login">
-                                    <Button style={{background:"	darkmagenta"}}>Login</Button>
+                                    <Button className='ms-3' style={{background:"	darkmagenta"}}>Login</Button>
                                 </Link>
                             }
                         </Nav>
