@@ -7,15 +7,14 @@ import { Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
-import { getAuth } from 'firebase/auth';
-import app from '../firebase/firebase.config';
 
-const auth = getAuth(app);
+
+
 
 const Register = () => {
     const [error, setError] = useState('');
     const[success,setsuccess]=useState()
-    const { createUser ,user} = useContext(AuthContext);
+    const { createUser} = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
 
     const handleRegister = event => {
@@ -39,15 +38,15 @@ if (password.length < 6) {
       
      
 
-        // createUser(email, password)
-        createUserWithEmailAndPassword(auth, email, password)
+         createUser(email, password)
+        // createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
                 event.target.reset();
-                seterror('')
+                setError('')
                 setsuccess("Successfully Register")
-                 updateUserData(result.user, name);
+                //  updateUserData(result.user, name,photo);
             })
             .catch(error => {
                 console.log(error);
@@ -58,17 +57,18 @@ if (password.length < 6) {
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
     }
-    const updateUserData = ( name)=> {
-       updateProfile(user,{
-        displayName:name,
-
-
-       }).then(()=>{
-        console.log('username update')
-       }).catch(error=>{
-        console.log(error.massege)
-       })
-    }
+    // const updateUserData = (user, name,url) => {
+    //     updateProfile(user, {
+    //         displayName: name,
+    //         photoURL:url,
+    //     })
+    //         .then(() => {
+    //             console.log('user name updated')
+    //         })
+    //         .catch(error => {
+    //             console.log(error);
+    //         })
+    // }
     const handlechange=event=>{
     
         if(event.target.value.trim().length ==0)

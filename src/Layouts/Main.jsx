@@ -6,6 +6,8 @@ import Features from '../Home/Features';
 import { Outlet } from 'react-router-dom';
 import Reward from '../Home/Reward';
 
+
+
 const Main = () => {
     return (
         <div>

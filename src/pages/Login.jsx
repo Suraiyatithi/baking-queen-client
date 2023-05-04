@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
@@ -7,13 +7,15 @@ import {  FaGithub, FaGoogle } from 'react-icons/fa';
 
 
 const Login = () => {
-    const { signIn,signInWithGoogle,githubLogIn } = useContext(AuthContext);
+    const [wrong,setwrong]=useState('')
+    const { signIn,signInWithGoogle,githubLogIn,user } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     console.log('login page location', location)
     const from = location.state?.from?.pathname || '/'
 
     const handleLogin = event => {
+       
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
@@ -24,11 +26,16 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                event.target.reset()
                 navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error);
+                setwrong(error.massage);
             })
+            if(!user){
+                setwrong("please Enter Valide email and Password")
+
+            }
 
     }
 
@@ -86,6 +93,7 @@ const Login = () => {
           <div>
                     <button onClick={handleGithubSignIn} className="btn btn-secondary mt-3 mb-5 ps-5 pe-5 text-white"> <FaGithub></FaGithub> Sign in with Github</button>
                     </div>
+                    <div className="Text-danger">{wrong}</div>
           </Form.Text>
       </Form>
   </Container>
