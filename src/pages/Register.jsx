@@ -23,14 +23,15 @@ const Register = () => {
 
         console.log(name, photo, email, password);
         setError('');
-        if (email=='') {
-            setError('Your password did not match')
-            return
-        }
-        else if (password.length < 6) {
-            setError('password must be 6 characters or longer')
-            return
-        }
+
+
+if (password.length < 6) {
+   setError('!!!!password must be 6 characters or longer')
+   return
+}
+      
+     
+
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
@@ -58,18 +59,23 @@ const Register = () => {
                 setError(error.message);
             })
     }
+    const handlechange=event=>{
+        // setError(event.target.value);
+        if(event.target.value.trim().length ==0)
+        {
+           setError('!!!!!!!Please Fill All the Input Value')
+           return
+        }}
   const  handleShow=()=>{
-    if(error===true){
-        toast('Registration Unsuccessful')
-    }
-    else{
+    if(!error){
+       
     toast('Successfully Register to this site')}
   }
 
     return (
         <Container className='w-50 text-white'>
             <h3>Please Register</h3>
-            <Form onSubmit={handleRegister}>
+            <Form onSubmit={handleRegister} name='From'>
                 <Form.Group className="mb-3" controlId="formBasicname">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" name='name' placeholder="Your Name" required />
@@ -80,12 +86,12 @@ const Register = () => {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name='email' placeholder="Enter email" required />
+                    <Form.Control onChange={handlechange} type="email" name='email' placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name='password' placeholder="Password" required />
+                    <Form.Control onChange={handlechange} type="password" name='password' placeholder="Password" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -105,12 +111,12 @@ const Register = () => {
                     Already Have an Account? <Link to="/login">Login</Link>
                 </Form.Text>
                
-                <Form.Text className="text-danger">
-              <p className='text-error'>{error}</p>
+                <Form.Text className="">
+              <h6 className='text-error text-danger p-2'>{error}</h6>
                 </Form.Text>
             </Form>
         </Container>
     );
-};
+}
 
 export default Register;

@@ -1,56 +1,91 @@
 import React from 'react';
 import { CardGroup } from 'react-bootstrap';
 import Card from 'react-bootstrap/Card';
+import Footer from '../share/Footer';
+import Header from '../share/Header'
 
 
 
 const Blog = () => {
     return (
-        <div>
-           <h3>Here is Our Daily Blog Page</h3> 
-           <div className="">
+      <div>
+        <Header></Header>
+  
+        <div className='bg-dark text-center'>
+           <h3 className='text-center text-white p-5'>Here is Our Daily Blog Page</h3> 
+           <div className="m-4">
 
-    <div className='row row-cols-md-1 row-cols-lg-2 row-cols-sm-1 gap-2'>
-    <Card className='col p-4'>
+    <div className='row  row-cols-1 text-center'>
+    <Card className='w-75 p-5 col mx-auto'>
       <Card.Body>
-        <Card.Title>Tell us the difference between unControl and Control Components</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Title className='mb-4'>Tell us the difference between unControlled and Controlled Components</Card.Title>
+       
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+         <div className="d-flex justify-content-between">
+          <div className="">
+          <Card.Subtitle className="mb-2 text-muted">Controlled Components</Card.Subtitle>
+      
+            <p>Basically controlled components refers to components that have their state and behaviour controlled by the parent components.The parents components has held over the from data.it does not maintain its internal state. </p>
+          </div>
+          <div className="">
+          <Card.Subtitle className="mb-2 text-muted">Uncontrolled Components</Card.Subtitle>
+           
+            <p>On the Otherhand the uncontrolled components refers to components that usually manage it's own state internally.The DOM itself control over the data.</p>
+          </div>
+         </div>
         </Card.Text>
       </Card.Body>
     </Card>
-    <Card className='col p-4'>
+    <Card className='w-75 p-5 col mx-auto mt-4'>
       <Card.Body>
-        <Card.Title>How to validate React Props using prop Types</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Title className='mb-4'>How to validate React Props using prop Types</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">Card Validate Reat props </Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+            <p>Since parent components can pass down any data as props to child components, we need to validate
+               the data type to ensure the child gets what it expects.A parent component passes props down to 
+               child components. And child components receive them. We can pass any data as props. Therefore, 
+              we need a way to validate their data type so that the child component gets what they expect.</p>
         </Card.Text>
         <Card.Link href="#">Card Link</Card.Link>
         <Card.Link href="#">Another Link</Card.Link>
       </Card.Body>
     </Card>
-    <Card className='col'>
+    <Card className='w-75 p-5 col mx-auto mt-4'>
       <Card.Body>
-        <Card.Title>Tell us the difference between nodejs and expressjs</Card.Title>
+        <Card.Title className='mb-4'>Tell us the difference between nodejs and expressjs</Card.Title>
         <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+<div className="d-flex justify-content-between">
+  <div className="">
+  <Card.Subtitle className="mb-2 text-muted">Node.js</Card.Subtitle>
+  <p>Node js is an Open source and Cross plateform runtime environment for executing javascript code
+     outside of the browser.First of all you just need to remember that node.js is not a framework 
+     and it's a programming language.We basically 
+    use Node.js for the purpose of backend work as like building apis like web app or mobile app</p>
+  </div>
+  <div className="">
+  <Card.Subtitle className="mb-2 text-muted">Express.js</Card.Subtitle>
+  <p>One the Otherside Express.js is a kind of framework that sits on top of Node.js's web server 
+    functionally to simplify it's APIs and add helpful new features.It's makes it easier to organize
+     your applications functionallywith middle ware and routing.It facilities the rendering of dynamic
+      HTTP objects.</p>
+  </div>
+</div>
         </Card.Text>
       
       </Card.Body>
     </Card>
-    <Card className='col'>
+    <Card className='w-75 p-5 col mx-auto mt-4 mb-4'>
       <Card.Body>
-        <Card.Title>What is a Custom hook ,and why will you create a custom hook?</Card.Title>
-        <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+        <Card.Title className='mb-4'>What is a Custom hook ,and why will you create a custom hook?</Card.Title>
+        <Card.Subtitle className="mb-2 text-muted">Custom Hook</Card.Subtitle>
         <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+         <p>A custom hook is a speacial javascript function which name start with 'use' and can be used to 
+          call other hooks.It's a reusable function in javascript that a React js Software developer can use
+           to add speacial and unique functionality to the react application .If there is a requirments
+            to add a features,one can install a third party library and solve the problem .But What if there 
+            is no such kind of library
+           with hook rhat can be used.And Thuis problem Can be easily solve by using custom react js hooks.</p>
         </Card.Text>
        
       </Card.Body>
@@ -58,6 +93,8 @@ const Blog = () => {
     </div>
    
  </div>
+ </div>
+ <Footer></Footer>
  </div>
     );
 };
