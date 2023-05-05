@@ -28,7 +28,7 @@ const Recipes = () => {
             </Container>
             <div className="">
             <h3 className='text-warning text-center mt-5 mb-5'>Here are Some of my Recipes</h3>
-                <div className="row row-cols-lg-3 row-cols-sm-1 shadow-lg row-cols-md-2 m-4 mb-5">
+                <div className="row row-cols-1  shadow-lg p-5 m-4 mb-5">
             {
                 recipes.map(recipe=><Recipe key={recipe.id} recipe={recipe}></Recipe>)
             }

@@ -17,10 +17,25 @@ const Recipe = ({recipe}) => {
     return (
         <div>
             <CardGroup>
-      <Card className='mb-5' style={{height:"53rem"}}>
-        <Card.Img variant="top" src={recipe_photo} />
-        <Card.Body>
-          <Card.Title>{recipe_name}</Card.Title>
+      <Card className=' mb-5'>
+  <div className=" row row-cols-1 row-cols-lg-2">
+  <div className="col">
+       <img  className='w-75 p-4 m-4' src={recipe_photo} />
+       <Card.Title className='ps-5'>{recipe_name}</Card.Title>
+       <Card.Text className='ps-5'>
+            
+            <Rating
+  placeholderRating={rating}
+  emptySymbol={<FaRegStar/>}
+  placeholderSymbol={<FaStar className='text-warning'></FaStar>}
+  fullSymbol={<FaStar/>}
+/> <small>{rating}</small>
+
+          </Card.Text>
+       </div>
+   <div className="col">
+   <Card.Body className=''>
+          {/* <Card.Title>{recipe_name}</Card.Title> */}
           <Card.Text>
            <div className="">
             <h6>Ingrident:</h6>
@@ -35,16 +50,7 @@ const Recipe = ({recipe}) => {
             </p>
            </div>
           </Card.Text>
-          <Card.Text>
-            
-            <Rating
-  placeholderRating={rating}
-  emptySymbol={<FaRegStar/>}
-  placeholderSymbol={<FaStar className='text-warning'></FaStar>}
-  fullSymbol={<FaStar/>}
-/> <small>{rating}</small>
-
-          </Card.Text>
+       
           
         </Card.Body>
         <Card.Footer>
@@ -52,6 +58,8 @@ const Recipe = ({recipe}) => {
            Add to Favouite</button>
         <ToastContainer></ToastContainer>
         </Card.Footer>
+   </div>
+  </div>
         
       </Card>
     
