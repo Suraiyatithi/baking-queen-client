@@ -10,8 +10,6 @@ import { createUserWithEmailAndPassword, getAuth, updateProfile, } from 'firebas
 import app from '../firebase/firebase.config';
 
 
-const auth =getAuth(app);
-
 const Register = () => {
     const [error, setError] = useState('');
     const[success,setsuccess]=useState()

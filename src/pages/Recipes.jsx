@@ -11,7 +11,7 @@ const Recipes = () => {
         <div>
             <h3 className=' text-center mt-5 pt-5 text-warning'>More about The Chef</h3>
             <Container className='bg-white rounded shadow-lg'>
-              <div className="row row-cols-lg-2 row-cols-sm-1 p-5 m-5">
+              <div className="row row-cols-sm-1 row-cols-lg-2  p-5 m-5">
               <div className="col align-items-center">
                 <h4>Hey,This is {chef_name}</h4>
                 <p>{chef_description}

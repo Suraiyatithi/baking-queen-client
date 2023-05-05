@@ -43,8 +43,8 @@ const Header = () => {
   
 {
     user && <div className="profile">
-        <img style={{height:"30px",weight:"30px"}} className='img img-fluid rounded-circle m-5' src={user?.photoURL}></img>
-    <div className="name m-5">{user.displayname}</div>
+        <img style={{height:"30px",weight:"30px"}} className='img img-fluid rounded-circle mt-2 ms-4' src={user?.photoURL}></img>
+    <div className="name">{user.displayname}</div>
     </div>
 }
 
