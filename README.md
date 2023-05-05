@@ -2,7 +2,9 @@
  Best Chef and recipe platform for finding the desire recipe you are looking for....
 
 - Live Link
-Hosted in Netlify -> [Careerhub](https://papaya-mochi-2fc430.netlify.app)
+Hosted in Netlify -> [Baking-queen](https://baking-queen-69016.web.app/)
+
+-server site like(https://baking-queen-server-suraiyatithi.vercel.app/chef/1)
 
 
 - Starter Template
