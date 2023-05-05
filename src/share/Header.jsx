@@ -5,6 +5,7 @@ import logo1 from '../assets/ff0g_lr87_140724.jpg'
 import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../Provider/AuthProvider';
 import {  NavLink } from 'react-router-dom';
+import '../share/Header.css'
 const Header = () => {
     
     const { user, logOut } = useContext(AuthContext);
@@ -36,9 +37,16 @@ const Header = () => {
        <NavLink  className= {({ isActive }) => (isActive ? 'text-info' : ' ')} to="/blog">Blog</NavLink>
        </Nav>
                    <Nav>
-                              {
+                              {/* {
                                 user && <FaUserCircle style={{ fontSize: '2rem' }}></FaUserCircle>
-                            }
+                            } */}
+  
+{
+    user && <div className="profile">
+        <img style={{height:"20px",weight:"20px"}} className='img img-fluid rounded-circle' src={user?.photoURL}></img>
+    <div className="name">{user.displayname}</div>
+    </div>
+}
 
                           {user ?
                                 <Button  className='ms-3' onClick={handleLogOut} style={{background:"	darkmagenta"}}>Logout</Button> :

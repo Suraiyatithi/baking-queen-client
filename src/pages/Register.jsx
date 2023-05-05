@@ -6,14 +6,17 @@ import { useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, updateProfile, } from 'firebase/auth';
+import app from '../firebase/firebase.config';
 
 
-
+const auth =getAuth(app);
 
 const Register = () => {
     const [error, setError] = useState('');
     const[success,setsuccess]=useState()
+    // const [displayName, setDisplayName] = useState("");
+
     const { createUser} = useContext(AuthContext);
     const [accepted, setAccepted] = useState(false);
 
@@ -46,8 +49,9 @@ if (password.length < 6) {
                 event.target.reset();
                 setError('')
                 setsuccess("Successfully Register")
-                //  updateUserData(result.user, name,photo);
-            })
+                 updateUserData(result.user,result.user.displayName,result.user.photoURl);
+               
+     })
             .catch(error => {
                 console.log(error);
                 setError(error);
@@ -57,18 +61,35 @@ if (password.length < 6) {
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
     }
-    // const updateUserData = (user, name,url) => {
-    //     updateProfile(user, {
-    //         displayName: name,
-    //         photoURL:url,
-    //     })
+    const updateUserData = (user, name,url) => {
+        updateProfile(user, {
+            displayName:name,
+           photoURL:url,
+         })
+             .then(() => {
+                 console.log('user name updated')
+             })
+             .catch(error => {
+                 console.log(error);
+             })
+       
+    }
+    // const updateProfile = () => {
+    //     const user = auth.currentUser;
+    //     if (user) {
+    //       user
+    //         .updateProfile({
+    //           displayName: displayName,
+    //         })
     //         .then(() => {
-    //             console.log('user name updated')
+    //           console.log('Update successful')
     //         })
-    //         .catch(error => {
-    //             console.log(error);
-    //         })
-    // }
+    //         .catch((error) => {
+    //           // An error occurred
+    //         });
+    //     }
+    //   };
+      
     const handlechange=event=>{
     
         if(event.target.value.trim().length ==0)
