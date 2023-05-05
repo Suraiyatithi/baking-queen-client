@@ -49,7 +49,7 @@ if (password.length < 6) {
                 event.target.reset();
                 setError('')
                 setsuccess("Successfully Register")
-                 updateUserData(result.user,result.user.displayName,result.user.photoURl);
+                //  updateUserData(result.user,result.user.displayName,result.user.photoURl);
                
      })
             .catch(error => {
@@ -61,19 +61,19 @@ if (password.length < 6) {
     const handleAccepted = event =>{
         setAccepted(event.target.checked)
     }
-    const updateUserData = (user, name,url) => {
-        updateProfile(user, {
-            displayName:name,
-           photoURL:url,
-         })
-             .then(() => {
-                 console.log('user name updated')
-             })
-             .catch(error => {
-                 console.log(error);
-             })
+    // const updateUserData = (user, name,url) => {
+    //     updateProfile(user, {
+    //         displayName:name,
+    //        photoURL:url,
+    //      })
+    //          .then(() => {
+    //              console.log('user name updated')
+    //          })
+    //          .catch(error => {
+    //              console.log(error);
+    //          })
        
-    }
+    // }
     // const updateProfile = () => {
     //     const user = auth.currentUser;
     //     if (user) {
